@@ -1,11 +1,12 @@
 import React,{useState, useEffect} from 'react'
-import "./App.css"
 import Trivia from './pages/Trivia'
 import Timer from './pages/Timer'
 import Start from './pages/Start'
 import data from './quizData'
 import scorePyramid from './scorePyramid'
 
+//git remote add origin https://
+//git push -u origin main
 function App() {
    const [questionNumber, setQuestionNumber] = useState(1)
    const[timer, setTimer] = useState(30)
@@ -65,7 +66,7 @@ function App() {
           
          </div>
          <div className="bottom">
-          <Trivia data={data}
+          <Trivia data={quizData}
            timer={timer}
            score={score}
            setTimer={setTimer}

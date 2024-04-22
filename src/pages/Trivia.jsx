@@ -1,19 +1,17 @@
 import React, {useState,  useEffect } from 'react'
 import useSound from "use-sound"
- import play from "../assets/quiz-game-music-loop-bpm-90-61070.mp3"
+import playSound from "../assets/cute-level-up-1-189852.mp3"
  import correct from "../assets/correct-156911.mp3"
 import wrong from "../assets/fail-144746.mp3"
-import ticking from "../assets/clock-timer-reverb-58822.mp3"
 
 function Trivia({ score, data, questionNumber, setQuestionNumber, setStop, stop}) {
     const [question ,setQuestion] = useState(null)
     const [selectedAnswer ,setSelectedAnswer] = useState(null)
     const [className ,setClassName] = useState("answer")
 
-    const [timeTicking] = useSound(ticking)
    const [wrongAnswer] = useSound(wrong)
   const [correctAnswer] = useSound(correct)
-  const [letsPlay] = useSound(play)
+  const [letsPlay] = useSound(playSound)
 
   
   
@@ -56,7 +54,12 @@ function Trivia({ score, data, questionNumber, setQuestionNumber, setStop, stop}
     
     useEffect(()=>{
        
-         setQuestion(data[questionNumber-1]) 
+         setQuestion(handleShuffle(data)[questionNumber]) 
+         setStop(questionNumber>=17?true:false)
+         
+
+
+
         
     },[data, questionNumber])
    
@@ -65,16 +68,16 @@ function Trivia({ score, data, questionNumber, setQuestionNumber, setStop, stop}
   return (
     <div className='trivia'>
 
-        <h2 className='score'>Score:{score}</h2>
+        <h2 className='score'>Score: {score}</h2>
         
-        <div className="question" >
+        <div className="question"key={data} >
             {question?.question}
         </div>
-        <br />
+        <br /><br />
         <div className="answers">
            {
             question?.answers.map((ans)=>{
-                return <div  className={selectedAnswer===ans? className:'answer'} onClick={()=>handleClick(ans)}>
+                return <div   className={selectedAnswer===ans? className:'answer'} onClick={()=>handleClick(ans)}>
                     {ans.text}
                 </div>
             })

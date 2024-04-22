@@ -1,18 +1,25 @@
 
 @media screen and (max-width:767px){
- 
+  body{
+    margin: 0;
+    padding: 0;
+    background-color:#020230;
+    color: white;
+  
+  }
+
   
 .app{
   margin: 0;
   padding: 0;
   display: flex;
-  background-color:#020230;
   color: white;
 }
 .main{
- width: 80%;
- height: 100vh;
- background-color:#73738d40;
+ width: 80vw;
+ height:100vh;
+ flex-wrap: nowrap;
+
  display: flex;
  flex-direction: column;
 }
@@ -30,7 +37,7 @@
   border-radius: 50%;
   font-weight: bold;
   position: absolute;
-  bottom:60px;
+  bottom:200px;
   left:60px;
   color:white;
 }
@@ -60,6 +67,206 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border-radius: 5px;
+
+}
+.answer{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid #ffffff;
+  font-weight: 300;
+  margin:0 10px 20px 10px;
+  cursor: pointer;
+}
+.answer:hover, .answer.active{
+  background: mediumblue;
+}
+
+.answer.correct{
+animation: correct 3s ease forwards;
+}
+@keyframes correct {
+  0%, 22%, 42%{
+    background: mediumblue;
+  }
+  20%, 40%, 60%{
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%, 100%{
+    background: green;
+  }
+
+}
+.answer.wrong{
+  animation: wrong 3s ease forwards;
+  }
+  @keyframes wrong {
+    0%, 22%, 42%{
+      background: mediumblue;
+    }
+    20%, 40%, 60%{
+      background: linear-gradient(#0e0124, #22074d);
+    }
+    62%, 100%{
+      background: crimson;
+    }
+  
+  }
+
+
+.pyramid{
+ width:25%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background:#0e0124;
+
+}
+.moneyList{
+list-style:none;
+width: 100%;
+padding:15px;
+}
+.moneyListItem{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+.moneyListItem.active {
+  background: rgba(0, 0, 255, 0.666);
+}
+.moneyListItemNumber{
+  font-weight: 100;
+  width: 30%;
+}
+.moneyListItemAmount{
+  font-weight: 300;
+}
+.endText{
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  color:white;
+  margin: auto;
+
+}
+.start{
+  width: 250px;
+  height:100px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  margin: auto;
+}
+.startInput{
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.startInput:focus{
+  outline:none;
+}
+.startButton{
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0e0124;
+  color:whitesmoke;
+  font-weight: bold;
+}
+.backHome{
+  width:100px;
+  padding:5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0e0124;
+  color:whitesmoke;
+  font-weight: bold;
+}
+}
+@media screen and (min-width:767px) and (max-width:1023px){
+ 
+  
+  body{
+    margin: 0;
+    padding: 0;
+    background-color:#020230;
+    color: white;
+  
+  }
+  
+.app{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color:transparent;
+  color: white;
+}
+.main{
+  width: 80vw;
+  height:100vh;
+ display: flex;
+ flex-direction: column;
+ flex-wrap: nowrap;
+}
+.top{
+  height:40%;
+  position: relative;
+}
+.timer{
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid white;
+  border-radius: 50%;
+  font-weight: bold;
+  position: absolute;
+  bottom:60px;
+  left:60px;
+  color:white;
+}
+.bottom{
+  height:30%;
+  position:relative;
+}
+.trivia{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+/* .score{
+  margin-top: -30px;
+} */
+.question{
+  width:80%;
+  background: linear-gradient(#100241, black);
+  border: 2px solid white;
+  text-align: center;
+  padding:20px;
+  border-radius: 10px;
+}
+.answers{
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
 }
 .answer{
   width: 40%;
@@ -113,6 +320,9 @@ animation: correct 3s ease forwards;
  display: flex;
  align-items: center;
  justify-content: center;
+ background:#0e0124;
+
+
 }
 .moneyList{
 list-style:none;
@@ -123,10 +333,9 @@ padding:15px;
   display: flex;
   align-items: center;
   padding: 5px;
-  border-radius: 5px;
 }
 .moneyListItem.active {
-  background: teal;
+  background: rgba(0, 0, 255, 0.666);
 }
 .moneyListItemNumber{
   font-weight: 100;
@@ -179,201 +388,8 @@ padding:15px;
   font-weight: bold;
 }
 .backHome{
-  width: 20%;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  background-color: #0e0124;
-  color:whitesmoke;
-  font-weight: bold;
-}
-}
-@media screen and (min-width:767px) and (max-width:1024px){
-  body{
-    margin: 0px;
-    padding: 0px;
-       background-color:#020230;
-  }
-  
-.app{
-  margin: 0;
-  padding: 0;
-  display: flex;
-  background-color:#020230;
-  color: white;
-}
-.main{
- width: 80%;
- height: 100vh;
- background-color:#73738d40;
- display: flex;
- flex-direction: column;
-}
-.top{
-  height:50%;
-  position: relative;
-}
-.timer{
-  width: 70px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid white;
-  border-radius: 50%;
-  font-weight: bold;
-  position: absolute;
-  bottom:60px;
-  left:60px;
-  color:white;
-}
-.bottom{
-  height:40%;
-}
-.trivia{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.score{
-  margin-top: -30px;
-}
-.question{
-  width:80%;
-  background: linear-gradient(#100241, black);
-  border: 2px solid white;
-  text-align: center;
-  padding:20px;
-  border-radius: 10px;
-}
-.answers{
-  width: 95%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.answer{
-  width: 40%;
-  padding: 10px;
-  text-align: center;
-  background: linear-gradient(#0e0124, #22074d);
-  border: 1px solid white;
-  border-radius: 15px;
-  font-weight: 300;
-  margin:0 10px 20px 10px;
-  cursor: pointer;
-}
-.answer:hover, .answer.active{
-  background: mediumblue;
-}
-
-.answer.correct{
-animation: correct 3s ease forwards;
-}
-@keyframes correct {
-  0%, 22%, 42%{
-    background: mediumblue;
-  }
-  20%, 40%, 60%{
-    background: linear-gradient(#0e0124, #22074d);
-  }
-  62%, 100%{
-    background: green;
-  }
-
-}
-.answer.wrong{
-  animation: wrong 3s ease forwards;
-  }
-  @keyframes wrong {
-    0%, 22%, 42%{
-      background: mediumblue;
-    }
-    20%, 40%, 60%{
-      background: linear-gradient(#0e0124, #22074d);
-    }
-    62%, 100%{
-      background: crimson;
-    }
-  
-  }
-
-
-.pyramid{
- width:20%;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-.moneyList{
-list-style:none;
-width: 100%;
-padding:15px;
-}
-.moneyListItem{
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  border-radius: 5px;
-}
-.moneyListItem.active {
-  background: teal;
-}
-.moneyListItemNumber{
-  font-weight: 100;
-  width: 30%;
-}
-.moneyListItemAmount{
-  font-weight: 300;
-}
-.endText{
-  position: relative;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  color:white;
-  margin: auto;
-
-}
-.start{
-  width: 250px;
-  height:100px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right:0;
-  bottom: 0;
-  margin: auto;
-}
-.startInput{
-  width: 100%;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-}
-.startInput:focus{
-  outline:none;
-}
-.startButton{
-  width: 100%;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  background-color: #0e0124;
-  color:whitesmoke;
-  font-weight: bold;
-}
-.backHome{
-  width: 20%;
-  height: 30px;
+   width:100px;
+  padding:5px;
   border: none;
   border-radius: 5px;
   background-color: #0e0124;
@@ -385,24 +401,26 @@ padding:15px;
  
   
   body{
-    margin: 0px;
-    padding: 0px;
-       background-color:#020230;
+    margin: 0;
+    padding: 0;
+    background-color:#020230;
+    color: white;
+  
   }
   
 .app{
   margin: 0;
   padding: 0;
   display: flex;
-  background-color:#020230;
+  background-color:transparent;
   color: white;
 }
 .main{
- width: 80%;
- height: 100vh;
- background-color:#73738d40;
+  width: 80vw;
+  height:100vh;
  display: flex;
  flex-direction: column;
+ flex-wrap: nowrap;
 }
 .top{
   height:50%;
@@ -501,6 +519,9 @@ animation: correct 3s ease forwards;
  display: flex;
  align-items: center;
  justify-content: center;
+ background:#0e0124;
+
+
 }
 .moneyList{
 list-style:none;
@@ -511,10 +532,9 @@ padding:15px;
   display: flex;
   align-items: center;
   padding: 5px;
-  border-radius: 5px;
 }
 .moneyListItem.active {
-  background: teal;
+  background: rgba(0, 0, 255, 0.666);
 }
 .moneyListItemNumber{
   font-weight: 100;
@@ -567,8 +587,8 @@ padding:15px;
   font-weight: bold;
 }
 .backHome{
-  width: 20%;
-  height: 30px;
+   width:100px;
+  padding:5px;
   border: none;
   border-radius: 5px;
   background-color: #0e0124;

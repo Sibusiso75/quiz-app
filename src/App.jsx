@@ -22,7 +22,9 @@ function App() {
    
 
    useEffect(()=>{
+
     setScore(scoreP.find((m)=>m.id===questionNumber).point)
+
      
      
    },[scoreP, questionNumber])

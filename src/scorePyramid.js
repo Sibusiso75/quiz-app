@@ -15,7 +15,7 @@ const scorePyramid = [
     {id:13, point: 125000},
     {id:14, point: 250000},
     {id:15, point: 500000},
-    {id:16, point: 1000000},
+    {id:16, point: 800000},
     {id:17, point: 1000000},
    
 

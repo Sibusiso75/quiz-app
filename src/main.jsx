@@ -4,10 +4,10 @@ import App from './App.jsx'
 import "./index.css"
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <div>
+ReactDOM.createRoot(document.getElementById('quiz')).render(
+  <React.StrictMode>
     <App/>
-  </div>
+  </React.StrictMode>
 )
 
 

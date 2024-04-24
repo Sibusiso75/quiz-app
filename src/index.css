@@ -1,4 +1,7 @@
-
+*{
+  margin:0px;
+  padding:0px;
+}
 @media screen and (max-width:767px){
   body{
     margin: 0;
@@ -7,21 +10,22 @@
     color: white;
   
   }
-
   
 .app{
   margin: 0;
   padding: 0;
+  margin:0px;
   display: flex;
+  background-color:transparent;
   color: white;
+  height:100%;
 }
 .main{
- width: 80vw;
- height:100vh;
- flex-wrap: nowrap;
-
+  width: 75%;
+  height:100vh;
  display: flex;
  flex-direction: column;
+ flex-wrap: nowrap;
 }
 .top{
   height:50%;
@@ -37,12 +41,13 @@
   border-radius: 50%;
   font-weight: bold;
   position: absolute;
-  bottom:200px;
-  left:60px;
+  bottom:10px;
+  left:50px;
   color:white;
 }
 .bottom{
-  height:50px;
+  height:50%;
+  position:relative;
 }
 .trivia{
   height: 100%;
@@ -51,33 +56,29 @@
   align-items: center;
   justify-content: space-around;
 }
-.score{
-  margin-top: -30px;
-}
+
 .question{
   width:80%;
   background: linear-gradient(#100241, black);
   border: 2px solid white;
   text-align: center;
-  padding:20px;
+  padding:10px;
   border-radius: 10px;
 }
 .answers{
-  width: 95%;
+  width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  border-radius: 5px;
-
 }
 .answer{
   width: 100%;
   padding: 10px;
   text-align: center;
   background: linear-gradient(#0e0124, #22074d);
-  border: 1px solid #ffffff;
-  font-weight: 300;
-  margin:0 10px 20px 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-weight:bold;
+  margin:0px 15px 20px 20px;
   cursor: pointer;
 }
 .answer:hover, .answer.active{
@@ -122,30 +123,30 @@ animation: correct 3s ease forwards;
  align-items: center;
  justify-content: center;
  background:#0e0124;
+ height:100vh;
 
 }
 .moneyList{
 list-style:none;
 width: 100%;
-padding:15px;
+padding:5px;
 }
 .moneyListItem{
   display: flex;
   align-items: center;
   padding: 5px;
-  border-radius: 5px;
 }
 .moneyListItem.active {
   background: rgba(0, 0, 255, 0.666);
 }
 .moneyListItemNumber{
-  font-weight: 100;
+  font-weight: bold;
   width: 30%;
 }
 .moneyListItemAmount{
-  font-weight: 300;
+  font-weight: bold;
 }
-.endText{
+/* .endText{
   position: relative;
   top: 0px;
   bottom: 0px;
@@ -154,9 +155,9 @@ padding:15px;
   color:white;
   margin: auto;
 
-}
+} */
 .start{
-  width: 250px;
+  width: 150px;
   height:100px;
   display: flex;
   justify-content: space-around;
@@ -189,7 +190,7 @@ padding:15px;
   font-weight: bold;
 }
 .backHome{
-  width:100px;
+   width:100px;
   padding:5px;
   border: none;
   border-radius: 5px;
@@ -198,7 +199,7 @@ padding:15px;
   font-weight: bold;
 }
 }
-@media screen and (min-width:767px) and (max-width:1023px){
+@media screen and (min-width:767px) and (max-width:1024px){
  
   
   body{
@@ -210,21 +211,23 @@ padding:15px;
   }
   
 .app{
-  margin: 0;
-  padding: 0;
+  padding: 0px;
+  margin:0px;
   display: flex;
   background-color:transparent;
   color: white;
+  height:100%;
+
 }
 .main{
-  width: 80vw;
+  width: 75%;
   height:100vh;
  display: flex;
  flex-direction: column;
  flex-wrap: nowrap;
 }
 .top{
-  height:40%;
+  height:50%;
   position: relative;
 }
 .timer{
@@ -237,12 +240,12 @@ padding:15px;
   border-radius: 50%;
   font-weight: bold;
   position: absolute;
-  bottom:60px;
-  left:60px;
+  bottom:10px;
+  left:50px;
   color:white;
 }
 .bottom{
-  height:30%;
+  height:50%;
   position:relative;
 }
 .trivia{
@@ -252,31 +255,31 @@ padding:15px;
   align-items: center;
   justify-content: space-around;
 }
-/* .score{
-  margin-top: -30px;
-} */
+
 .question{
   width:80%;
   background: linear-gradient(#100241, black);
   border: 2px solid white;
   text-align: center;
-  padding:20px;
+  padding:10px;
   border-radius: 10px;
 }
 .answers{
-  width: 95%;
+  padding:20px;
+
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
 }
 .answer{
   width: 40%;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   background: linear-gradient(#0e0124, #22074d);
   border: 1px solid white;
-  border-radius: 15px;
-  font-weight: 300;
-  margin:0 10px 20px 10px;
+  border-radius: 10px;
+  font-weight:bold;
+  margin:0px 10px 15px 20px;
   cursor: pointer;
 }
 .answer:hover, .answer.active{
@@ -321,13 +324,15 @@ animation: correct 3s ease forwards;
  align-items: center;
  justify-content: center;
  background:#0e0124;
+ height:100vh;
+
 
 
 }
 .moneyList{
 list-style:none;
 width: 100%;
-padding:15px;
+padding:5px;
 }
 .moneyListItem{
   display: flex;
@@ -338,13 +343,13 @@ padding:15px;
   background: rgba(0, 0, 255, 0.666);
 }
 .moneyListItemNumber{
-  font-weight: 100;
+  font-weight: bold;
   width: 30%;
 }
 .moneyListItemAmount{
-  font-weight: 300;
+  font-weight: bold;
 }
-.endText{
+/* .endText{
   position: relative;
   top: 0px;
   bottom: 0px;
@@ -353,7 +358,7 @@ padding:15px;
   color:white;
   margin: auto;
 
-}
+} */
 .start{
   width: 250px;
   height:100px;
@@ -398,8 +403,6 @@ padding:15px;
 }
 }
 @media screen and (min-width:1024px){
- 
-  
   body{
     margin: 0;
     padding: 0;
@@ -409,14 +412,16 @@ padding:15px;
   }
   
 .app{
-  margin: 0;
-  padding: 0;
+  padding: 0px;
+  margin:0px;
   display: flex;
   background-color:transparent;
   color: white;
+  height:100%;
+
 }
 .main{
-  width: 80vw;
+  width: 75%;
   height:100vh;
  display: flex;
  flex-direction: column;
@@ -436,12 +441,13 @@ padding:15px;
   border-radius: 50%;
   font-weight: bold;
   position: absolute;
-  bottom:60px;
-  left:60px;
+  bottom:10px;
+  left:50px;
   color:white;
 }
 .bottom{
-  height:40%;
+  height:50%;
+  position:relative;
 }
 .trivia{
   height: 100%;
@@ -450,32 +456,31 @@ padding:15px;
   align-items: center;
   justify-content: space-around;
 }
-.score{
-  margin-top: -30px;
-}
+
 .question{
-  width:80%;
+  width:100%;
   background: linear-gradient(#100241, black);
   border: 2px solid white;
   text-align: center;
-  padding:20px;
+  padding:10px;
   border-radius: 10px;
 }
 .answers{
-  width: 95%;
+  padding:20px;
+
+  width: 90%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .answer{
   width: 40%;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   background: linear-gradient(#0e0124, #22074d);
   border: 1px solid white;
-  border-radius: 15px;
-  font-weight: 300;
-  margin:0 10px 20px 10px;
+  border-radius: 10px;
+  font-weight:bold;
+  margin:0px 10px 15px 20px;
   cursor: pointer;
 }
 .answer:hover, .answer.active{
@@ -520,13 +525,15 @@ animation: correct 3s ease forwards;
  align-items: center;
  justify-content: center;
  background:#0e0124;
+ height:100vh;
+
 
 
 }
 .moneyList{
 list-style:none;
 width: 100%;
-padding:15px;
+padding:5px;
 }
 .moneyListItem{
   display: flex;
@@ -537,13 +544,13 @@ padding:15px;
   background: rgba(0, 0, 255, 0.666);
 }
 .moneyListItemNumber{
-  font-weight: 100;
+  font-weight: bold;
   width: 30%;
 }
 .moneyListItemAmount{
-  font-weight: 300;
+  font-weight: bold;
 }
-.endText{
+/* .endText{
   position: relative;
   top: 0px;
   bottom: 0px;
@@ -552,7 +559,7 @@ padding:15px;
   color:white;
   margin: auto;
 
-}
+} */
 .start{
   width: 250px;
   height:100px;

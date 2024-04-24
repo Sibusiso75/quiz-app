@@ -22,11 +22,7 @@ function App() {
    
 
    useEffect(()=>{
-
-    setScore(scoreP.find((m)=>m.id===questionNumber).point)
-
-     
-     
+    questionNumber>1 && setScore(scoreP.find((m)=>m.id===questionNumber-1).point)
    },[scoreP, questionNumber])
   return (
     <div className='app'>
@@ -38,34 +34,27 @@ function App() {
          {
             stop?
             <>
-             <div className='earnedMoneyDiv'>
-
-            <h3>Your score: {score}</h3>
-             </div>
-            <div style={{margin:"20px"}}>
-              <button onClick={()=>location.reload()} className='backHome'>Back home</button>
-              </div>
-            </>
-             
-             :<>
-           
-        
             
+
+            <main style={{margin:"20px"}}>
+            <h3>Your score: {score}</h3>
+              <button onClick={()=>location.reload()} className='backHome'>Back home</button>
+              </main>
+            </>
+             :<>
             <div className="top">
-         <h1 style={{textAlign:"center"}}>{username}</h1>
+               <h1 style={{textAlign:"center"}}>{username}</h1>
+           <h2>Score: {score}</h2>
+         
            <div className="timer">
             <Timer setStop={setStop}
             stop={stop}
             data={quizData}
             questionNumber={questionNumber}
             timer={timer}
-
             setTimer={setTimer}
             />
-           
-
            </div>
-          
          </div>
          <div className="bottom">
           <Trivia data={quizData}
@@ -75,8 +64,6 @@ function App() {
           questionNumber={questionNumber}
           setQuestionNumber={setQuestionNumber}
           setStop={setStop}/>
-       
-         
          </div>
             </>
          }      
@@ -92,10 +79,8 @@ function App() {
                  </li>
                })
             }
-           
          </ul>
       </div>
-
 </>
 :
 <>

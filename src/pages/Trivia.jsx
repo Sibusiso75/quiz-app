@@ -54,30 +54,21 @@ function Trivia({ score, data, questionNumber, setQuestionNumber, setStop, stop}
     
     useEffect(()=>{
        
-         setQuestion(handleShuffle(data)[questionNumber]) 
-         setStop(questionNumber>=17?true:false)
-         
-
-
-
-        
+         setQuestion(handleShuffle(data)[questionNumber-1]) 
+         setStop(questionNumber>=15?true:false)
     },[data, questionNumber])
    
 
 
   return (
     <div className='trivia'>
-
-        <h2 className='score'>Score: {score}</h2>
-        
-        <div className="question"key={data} >
+<div className="question">
             {question?.question}
         </div>
-        <br /><br />
         <div className="answers">
            {
             question?.answers.map((ans)=>{
-                return <div   className={selectedAnswer===ans? className:'answer'} onClick={()=>handleClick(ans)}>
+                return <div className={selectedAnswer===ans? className:'answer'} onClick={()=>handleClick(ans)}>
                     {ans.text}
                 </div>
             })
